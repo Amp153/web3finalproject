@@ -1,9 +1,5 @@
 # web3finalproject
 
-# Current Goals
+# Creating a web forum
 
--Decide on a project
-
--Decide on the engine to use for said project
-
--Start working on the project
+-Written in python
