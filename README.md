@@ -10,7 +10,7 @@ It'll look professional and have the expected functionality
 # Current Goals
 - Let the user login/register an account
 - Users can post, view any posts, leave a comment on a post, and view comments on a post.
-- Able to view your profile
+- Users can view their profile
 
 # Planned but might not be implemented
 
