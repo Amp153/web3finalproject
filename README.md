@@ -9,14 +9,14 @@ It'll look professional and have the expected functionality
 
 # Current Goals
 - Let the user login/register an account
-- Users can post, view any posts, leave a comment on a post, and view comments on a post.
+- Users can post, view any posts, leave a comment on a post, and view comments on a post
 - Users can view their profile
 
 # Planned but might not be implemented
-
-- Have an (fake)advertisement that send the user to another page when clicked.
-
-- Have an ad to go back to the forum.
-
+- Have an (fake)advertisement that send the user to another page when clicked
+- Have an ad to go back to the forum
 - Have an ad that has some basic functionality
 
+# Resources used
+- I'm using the guide found at this tutorial to get the project started
+https://docs.djangoproject.com/en/2.0/intro/tutorial01/
