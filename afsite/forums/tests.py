@@ -2,7 +2,7 @@
 import datetime
 from django.utils import timezone
 from django.test import TestCase
-from .models import Title
+from forums.models import Title
 from django.urls import reverse
 
 
