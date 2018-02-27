@@ -13,10 +13,8 @@ It'll look professional and have the expected functionality
 - Users can view their profile
 
 # Planned but might not be implemented
-- Have an (fake)advertisement that send the user to another page when clicked
-- Have an ad to go back to the forum
-- Have an ad that has some basic functionality
+- Lots more functionality
 
 # Resources used
-- I'm using the guide found at this tutorial to get the project started
+- I'm using the guide found at this tutorial to get the project started so some code is bound to be similar if not identical
 https://docs.djangoproject.com/en/2.0/intro/tutorial01/
