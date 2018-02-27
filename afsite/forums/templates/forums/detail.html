@@ -1,0 +1,12 @@
+<h1>{{ title.title_text }}</h1>
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+<form action="{% url title.id %}" method="post">
+{% csrf_token %}
+
+{% for post in title.post_set.all %}
+    <input type="radio" name="post" id="post{{ forloop.counter }}" value="{{ post.id }}" />
+    <label for="post{{ forloop.counter }}">{{ post.post_text }}</label><br />
+{% endfor %}
+</form>

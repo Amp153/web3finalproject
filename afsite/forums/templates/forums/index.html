@@ -1,0 +1,12 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'forums/style.css' %}" />
+{% if latest_title_list %}
+    <ul>
+        {% for title in latest_title_list %}
+            <li><a href="{% url 'forums:detail' title.id %}">{{ title.title_text }}</a></li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No forums are available.</p>
+    {% endif %}
