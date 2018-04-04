@@ -1,0 +1,18 @@
+{% extends 'forum/base.html' %}
+
+{% block content %}
+ 
+<h3>Sign up</h3>
+ 
+{% if request.method != 'POST' %}
+    <form method="post" action="">
+        {% csrf_token %}
+        Username:{{form.user_name}}
+        Password:{{form.user_pass}}
+        E-mail:{{form.user_email}}
+        <input type="submit" value="Add category" />
+    </form>
+{% else %}
+    Successfully registered. You can now <a href="/forum/signin">sign in</a> and start posting! :-);
+{% endif %}
+{% endblock %}

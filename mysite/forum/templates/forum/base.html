@@ -1,0 +1,28 @@
+{% load static %}
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="description" content="A short description." />
+    <meta name="keywords" content="put, keywords, here" />
+    <link rel="stylesheet" type="text/css" href="{% static 'forum/style.css' %}" />
+    <title>My forums</title>
+</head>
+<body>
+    <div id="wrapper">
+        <div id="menu">
+            <a class="item" href="/forum">Home</a> -
+            <a class="item" href="/forum/create_topic">Create a topic</a> -
+            <a class="item" href="/forum/create_cat">Create a category</a> -
+
+            <div id="userbar">
+                <div id="userbar">Hello Example. Not you? Log out.</div>
+            </div>
+            <div id="content">
+                {% block content %}
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+<div id="footer">Created by Anthony Fuller</div>
+</body>
+</html>

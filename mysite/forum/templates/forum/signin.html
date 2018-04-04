@@ -1,0 +1,25 @@
+{% extends 'forum/base.html' %}
+
+{% block content %}
+<h3>Sign in</h3>
+
+
+{% if request.user_name != None %}
+	You are already signed in, you can <a href="signout.php">sign out</a> if you want.
+{% else %}
+	{% if request.method != 'POST' %}
+		<form method="post" action="">
+			{% csrf_token %}
+            Username:{{form.user_name}}
+            Password:{{form.user_pass}}
+            <input type="submit" value="Sign in" />
+            <input type="hidden" name="next" value="{{ request.get_full_path }}" />
+		</form>
+	
+    {% else %}
+    	Welcome, {{ form.user_name }}<a href="index.php">Proceed to the forum overview</a>.
+    {% endif %}
+    
+{% endif %}
+
+{% endblock %}
