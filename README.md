@@ -7,3 +7,4 @@ https://tutorial.djangogirls.org/en/django_views/
 http://www.tangowithdjango.com/book/chapters/templates.html#fig-rango-template-inheritance
 https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Forms
 https://docs.djangoproject.com/en/2.0/intro/tutorial01/
+http://django-book.readthedocs.io/en/latest/chapter14.html
