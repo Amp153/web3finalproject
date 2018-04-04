@@ -1,12 +1,17 @@
-{% extends "base.html" %}
+<h1>Create an account</h1>
 
-{% block content %}
+  <form action="" method="post">
+        {% csrf_token %}
+      {{ form.as_p }}
+      <input type="submit" value="Create the account">
+  </form>
 
   {% if form.errors %}
     <p class="error">Sorry, that's not a valid username or password</p>
   {% endif %}
 
   <form action="" method="post">
+        {% csrf_token %}
     <label for="username">User name:</label>
     <input type="text" name="username" value="" id="username">
     <label for="password">Password:</label>
@@ -15,5 +20,3 @@
     <input type="submit" value="login" />
     <input type="hidden" name="next" value="{{ next|escape }}" />
   </form>
-
-{% endblock %}

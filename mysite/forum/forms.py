@@ -1,6 +1,10 @@
 from django import forms
 from .models import User
 
+from django.contrib.auth.forms import UserCreationForm
+from django.http import HttpResponseRedirect
+from django.shortcuts import render_to_response
+
 class SignUpForm(forms.ModelForm):
     '''
     user_name = forms.CharField()
@@ -18,3 +22,15 @@ class SignInForm(forms.ModelForm):
     class Meta:
         model = User
         fields = ('user_name','user_pass',)
+
+def register(request):
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            new_user = form.save()
+            return HttpResponseRedirect("/books/")
+    else:
+        form = UserCreationForm()
+    return render_to_response("forum/test.html", {
+        'form': form,
+    })

@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
-from django.http import Http404#, HttpResponse
+from django.http import Http404, HttpResponseRedirect
 from django.utils import timezone
+from django.contrib import auth
 #from django.template import loader
 from .models import User
 from .forms import SignUpForm, SignInForm
@@ -31,3 +32,23 @@ def signin(request):
     
     form = SignInForm()
     return render(request, 'forum/signin.html', {'form': form})
+
+
+
+def login_view(request):
+    username = request.POST.get('username', '')
+    password = request.POST.get('password', '')
+    user = auth.authenticate(username=username, password=password)
+    if user is not None and user.is_active:
+        # Correct password, and the user is marked "active"
+        auth.login(request, user)
+        # Redirect to a success page.
+        return HttpResponseRedirect("/account/loggedin/")
+    else:
+        # Show an error page
+        return HttpResponseRedirect("/account/invalid/")
+
+def logout_view(request):
+    auth.logout(request)
+    # Redirect to a success page.
+    return HttpResponseRedirect("/account/loggedout/")
