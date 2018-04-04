@@ -1,20 +1,9 @@
-# web3finalproject
-
-# Summary
-
-For my college web project I've decided to make a webforum in python.
-
-# The Final Goal
-It'll look professional and have the expected functionality
-
-# Current Goals
-- Let the user login/register an account
-- Users can post, view any posts, leave a comment on a post, and view comments on a post
-- Users can view their profile
-
-# Planned but might not be implemented
-- Lots more functionality
-
 # Resources used
-- I'm using the guide found at this tutorial to get the project started so some code is bound to be similar if not identical
+- I'm using a bunch of guides so some code might be similar if not identical
+
+https://code.tutsplus.com/tutorials/how-to-create-a-phpmysql-powered-forum-from-scratch--net-10188
+https://docs.djangoproject.com/en/1.7/topics/templates/
+https://tutorial.djangogirls.org/en/django_views/
+http://www.tangowithdjango.com/book/chapters/templates.html#fig-rango-template-inheritance
+https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Forms
 https://docs.djangoproject.com/en/2.0/intro/tutorial01/
