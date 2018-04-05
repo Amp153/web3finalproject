@@ -28,9 +28,9 @@ def register(request):
         form = UserCreationForm(request.POST)
         if form.is_valid():
             new_user = form.save()
-            return HttpResponseRedirect("/books/")
+            return HttpResponseRedirect("forum/")
     else:
         form = UserCreationForm()
-    return render_to_response("forum/test.html", {
+    return render_to_response("registration/login.html", {
         'form': form,
     })
