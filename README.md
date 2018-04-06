@@ -8,3 +8,5 @@ http://www.tangowithdjango.com/book/chapters/templates.html#fig-rango-template-i
 https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Forms
 https://docs.djangoproject.com/en/2.0/intro/tutorial01/
 http://django-book.readthedocs.io/en/latest/chapter14.html
+https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Authentication
+https://simpleisbetterthancomplex.com/tutorial/2017/02/18/how-to-create-user-sign-up-view.html
