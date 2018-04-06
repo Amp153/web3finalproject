@@ -15,7 +15,15 @@
             <a class="item" href="/forum/create_cat">Create a category</a> -
 
             <div id="userbar">
-                <div id="userbar">Hello Example. Not you? Log out.</div>
+                <div id="userbar">
+                        {% if user.is_authenticated %}
+                          User: {{ user.get_username }}
+                          <a class="item" href="{% url 'logout'%}?next=/forum/">Logout</a>   
+                        {% else %}
+                          <a class="item" href="{% url 'login'%}?next=/forum/">Login</a> 
+                            / <a class="item" href="{% url 'signup' %}">Signup</a>
+                        {% endif %} 
+                       </div>
             </div>
             <div id="content">
                 {% block content %}

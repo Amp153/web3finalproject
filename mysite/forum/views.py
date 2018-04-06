@@ -1,23 +1,26 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, redirect
 from django.http import Http404, HttpResponseRedirect
 from django.utils import timezone
 from django.contrib import auth
 #from django.template import loader
-from .models import User
-from .forms import SignUpForm, SignInForm
+#from .models import User
+from django.contrib.auth.models import User
+#from .forms import SignUpForm, SignInForm
+from django.contrib.auth import login, authenticate
+from .forms import SignUpForm
 
 # Create your views here.
 def index(request):
     return render(request, 'forum/create_cat.html', {})
-
+'''
 def signup(request):
 
     if request.method == 'POST':
         form = SignUpForm(request.POST)
         if form.is_valid():
             post = form.save(commit=False)
-            post.user_date = timezone.now()
-            post.user_level = 0
+            #post.user_date = timezone.now()
+            #post.user_level = 0
             post.save()
             #userName = form.cleaned_data['user_name']
     else:
@@ -32,23 +35,17 @@ def signin(request):
     
     form = SignInForm()
     return render(request, 'forum/signin.html', {'form': form})
-
-
-
-def login_view(request):
-    username = request.POST.get('username', '')
-    password = request.POST.get('password', '')
-    user = auth.authenticate(username=username, password=password)
-    if user is not None and user.is_active:
-        # Correct password, and the user is marked "active"
-        auth.login(request, user)
-        # Redirect to a success page.
-        return HttpResponseRedirect("/account/loggedin/")
+    '''
+def signup(request):
+    if request.method == 'POST':
+        form = SignUpForm(request.POST)
+        if form.is_valid():
+            form.save()
+            username = form.cleaned_data.get('username')
+            raw_password = form.cleaned_data.get('password1')
+            user = authenticate(username=username, password=raw_password)
+            login(request, user)
+            return redirect('/forum')
     else:
-        # Show an error page
-        return HttpResponseRedirect("/account/invalid/")
-
-def logout_view(request):
-    auth.logout(request)
-    # Redirect to a success page.
-    return HttpResponseRedirect("/account/loggedout/")
+        form = SignUpForm()
+    return render(request, 'forum/signup.html', {'form': form})
