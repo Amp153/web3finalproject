@@ -3,15 +3,17 @@ from django.http import Http404, HttpResponseRedirect
 from django.utils import timezone
 from django.contrib import auth
 #from django.template import loader
-#from .models import User
+from .models import Categories
 from django.contrib.auth.models import User
 #from .forms import SignUpForm, SignInForm
 from django.contrib.auth import login, authenticate
 from .forms import SignUpForm
 
-# Create your views here.
+# Send the index request to forum/index.html
 def index(request):
-    return render(request, 'forum/create_cat.html', {})
+    category_list = Categories.objects.order_by('-id')
+    context = {'category_list': category_list}
+    return render(request, 'forum/index.html', context)
 '''
 def signup(request):
 
@@ -36,6 +38,9 @@ def signin(request):
     form = SignInForm()
     return render(request, 'forum/signin.html', {'form': form})
     '''
+    # Grab the data
+    # Once the user is signedup boot them back to index
+    # If they aren't display the data
 def signup(request):
     if request.method == 'POST':
         form = SignUpForm(request.POST)

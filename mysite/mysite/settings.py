@@ -123,3 +123,4 @@ STATIC_URL = '/static/'
 LOGIN_REDIRECT_URL = '/'
 # Prevents sending any emails
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+#Delete me -id3813fk

@@ -24,6 +24,11 @@ class SignInForm(forms.ModelForm):
         fields = ('user_name','user_pass',)
         '''
 
+# Extend UserCreationForm (built in account manager)
+# Give it an email field
+# Inside UserCreationForm there is a database table called User
+# Grab the fields when it's called
+# Again SignUpForm is being linked to the built in User database table
 class SignUpForm(UserCreationForm):
     #first_name = forms.CharField(max_length=30, required=False, help_text='Optional.')
     #last_name = forms.CharField(max_length=30, required=False, help_text='Optional.')
