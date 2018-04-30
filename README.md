@@ -1,3 +1,7 @@
+# Hints to get started
+- Have python and Django installed
+- Navigate to the MySiteV4 Directory and do a python manage.py runserver
+
 # Resources used
 - I'm using a bunch of guides so some code might be similar if not identical
 
@@ -12,3 +16,4 @@ https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Authentication
 https://simpleisbetterthancomplex.com/tutorial/2017/02/18/how-to-create-user-sign-up-view.html
 https://stackoverflow.com/questions/26312219/operationalerror-no-such-column-django
 https://simpleisbetterthancomplex.com/series/2017/09/04/a-complete-beginners-guide-to-django-part-1.html - final site is very similar to here (it's not completely the same)
+Also using Bootstrap but I forgot the link.
