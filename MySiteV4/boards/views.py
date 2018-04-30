@@ -1,3 +1,5 @@
+from django.contrib.auth import login as auth_login
+from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect, get_object_or_404
@@ -8,6 +10,17 @@ from .models import Board, Topic, Post
 def home(request):
     boards = Board.objects.all()
     return render(request, 'home.html', {'boards': boards})
+
+def signup(request):
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            auth_login(request, user)
+            return redirect('home')
+    else:
+        form = UserCreationForm()
+    return render(request, 'signup.html', {'form': form})
 
 def board_topics(request, pk):
     board = get_object_or_404(Board, pk=pk)
